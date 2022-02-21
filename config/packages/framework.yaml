@@ -17,6 +17,14 @@ framework:
     php_errors:
         log: true
 
+    http_client:
+        scoped_clients:
+            comments.api:
+                base_uri: '%env(COMMENTS_API)%'
+
+                # HTTP Bearer authentication
+                auth_bearer: '%env(BEARER)%'
+
 when@test:
     framework:
         test: true
